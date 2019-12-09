@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>결혼합니다</title>
+    <link href="/resouces/css/jquery.slider.css" rel="stylesheet">
+    <link href="/resouces/css/default.css" rel="stylesheet">
+    <script src="/resouces/js/jquery-2.2.3.min.js"></script>
+    <script src="/resouces/js/jquery.slider.min.js"></script>
+</head>
+<body>
+    <div class="my-slider">
+        <ul>
+            <li>
+                <div class="first-content">
+                    <div class="first-content-detail">
+                        <p class="title">정대희 <span style="font-size: 18px; font-weight: normal;">그리고</span> 김서영</p>
+                        <p class="date">2020. 2. 1. 토요일 오후 1시</p>
+                        <p class="location">비렌티 웨딩</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="second-content">
+                    <div class="second-content-detail">
+                        <p class="letter">7년간의 추억을 가지고
+                            <br />더 큰 행복의 길로 나가려 합니다.
+                        </p>
+                        <p class="letter">그 시작의 자리에 오셔서 축복해주시면
+                            <br/> 더없는 기쁨으로 간직하겠습니다.
+                        </p>
+                        <div style="margin-top: 70px;">
+                            <hr />
+                                <p class="parent-name">정상욱 김수경 <span class="child-name">의 장남</span> 대희<br />김형수 정경하 <span class="child-name">의 장녀</span> 서영
+                                </p>
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="third-content">
+                    <div class="third-content-detail">
+                        <div class="photo-area">
+
+                        </div>
+                        <div class="controller-area">
+                            <button style="display: table-cell; vertical-align: middle;">이전</button>
+                            <span class="indicator">1/5</span>
+                            <button style="display: table-cell; vertical-align: middle;">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="fourth-content">
+                    <div class="fourth-content-detail">
+                        <p class="title">오시는 길</p>
+                        <p class="location">비렌티웨딩홀<br />비렌티빌 베르테홀(3F)</p>
+                        <p class="address">충남 천안시 서북구 천안대로 1198-30 (신당동)&nbsp;<img src="/resouces/image/copy.png"/></p>
+                        <div style="text-align: center; margin-top: 25px;">
+                            <button>셔틀안내</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button>카카오맵</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>Card 5</li>
+            <li>Card 6</li>
+        </ul>
+    </div>
+    <script>
+        $('.my-slider').cardslider({
+        
+            // keyboard navigation
+            keys: {
+                next: 38,
+                prev: 40
+            },
+        
+            // 'up', 'down', 'right', 'left'
+            direction: 'up',
+        
+            // shows navigation
+            nav: false,
+        
+            // allows swipe event on touch devices
+            swipe: true,
+        
+            // shows bottom pagination dots
+            dots: false,
+        
+            // infinite loop
+            loop: false,
+        
+            // callbacks
+            beforeCardChange: null,
+            afterCardChange: null
+    
+        })
+    </script>
+</body>
+</html>
+
+<!-- https://map.kakao.com/?itemId=245466707 -->
