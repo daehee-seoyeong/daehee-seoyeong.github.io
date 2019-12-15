@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps&display=swap&subset=latin-ext');
+/* @import url('https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap&subset=korean'); */
+/* @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap&subset=korean'); */
 
 * {
     box-sizing: border-box;
@@ -18,11 +21,13 @@ html, body {
 }
 
 body {
+    /* font-family: 'Yeon Sung', serif; */
+    /* font-family: 'Nanum Pen Script', serif; */
     font-family: 'Nanum Myeongjo', serif;
     /* font-family: 'Roboto', monospace; */
     /* font-family: 'Amiri', 'SeMyungjo', Serif; */
     background-color:#0e2f40;
-    color: #805522 !important;
+    color: #6b4618 !important;
     text-rendering: optimizeLegibility;
 }
 
@@ -63,7 +68,8 @@ body {
 
 /* modified from here */
 .cardslider__cards {
-    width: 90%;
+    width: 95%;
+    height: 85%;
 }
 
 .cardslider__card {
@@ -82,28 +88,71 @@ body {
 }
 
 .first-content .title {
-    font-weight: bold;
-    text-align: left;
+    margin: 0;
+    font-weight: 800;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.0;
+    letter-spacing: 2.0px;
+}
+
+.first-content hr {
+    width: 60%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: 0.5px solid #6b461870;
+}
+
+.first-content .subtitle {
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.first-content .stamp {
+    width: 80px;
+    height: 80px;
+    line-height: 65px;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    color: #6b46189c !important;
+    
+    position: absolute;
+    bottom: 50px;
+    right: 12px;
+
+    border: double 10px #6b46189c;
+    border-radius: 50%;
+
+    transform: rotate(8deg);
+
+    margin: 0;
+    text-align: center;
     font-size: 22px;
-    letter-spacing: 2px;
-    margin-bottom:  40px;
+    letter-spacing: 1px;
 }
 
 .first-content .date {
-    text-align: left;
+    margin: 0;
+    margin-top: 40px;
+    font-weight: 700;
+    text-align: center;
     font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .first-content .location {
-    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
     font-size: 16px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .first-content-detail {
-    padding-top: 40px;
-    padding-left: 25px;
+    padding-top: 55px;
+    /* padding-left: 25px; */
     opacity: none;
     position: absolute;
     width: 100%;
@@ -125,12 +174,21 @@ body {
     width: 100%;
 }
 
+.second-content .poem {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1.0px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
 .second-content .letter {
     text-align: center;
     font-size: 16px;
     letter-spacing: 1.2px;
-    margin-bottom:  30px;
-    line-height: 2.0;
+    margin-top:  35px;
+    line-height: 1.6;
 }
 
 .second-content .parent-name {
