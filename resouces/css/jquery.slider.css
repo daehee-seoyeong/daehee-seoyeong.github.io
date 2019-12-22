@@ -11,13 +11,14 @@
   list-style: none;
 }
 .cardslider__cards {
-  max-width: 375px;
-  max-height: 620px;
-  width: 80%;
-  height: 80%;
+  width: 95%;
+  height: 95%;
+  max-width: 345px;
+  max-height: 630px;
   position: absolute;
   left: 50%;
   top: 50%;
+  top: calc(50% - 6px);
   transform: translate(-50%, -50%);
   transform-style: preserve-3d;
 }
@@ -61,8 +62,8 @@
 .cardslider__card {
   background: #d7d7d7;
   /* background: url("http://api.thumbr.it/whitenoise-361x370.png?background=faf9f2ff&noise=626262&density=10&opacity=9"); */
-  background: url("/resouces/image/background.jpg");
-  background-size: 345px auto;
+  background: url("/resouces/image/background.jpg") no-repeat;
+  background-size: 375px auto;
   display: block;
   border-radius: 10px;
   width: 100%;
@@ -86,19 +87,19 @@
   opacity: 0;
 }
 .cardslider--direction-up .cardslider__card {
-  transform: scale(0.8) translate3d(0, 17.25%, 0);
+  transform: scale(0.8) translate3d(0, 14.50%, 0);
 }
 .cardslider--direction-up .cardslider__card--index-0 {
   transform: translate3d(0, 0, 4px);
 }
 .cardslider--direction-up .cardslider__card--index-1 {
-  transform: scale(0.95) translate3d(0, 4.31%, 3px);
+  transform: scale(0.95) translate3d(0, 3.50%, 3px);
 }
 .cardslider--direction-up .cardslider__card--index-2 {
-  transform: scale(0.9) translate3d(0, 8.61%, 2px);
+  transform: scale(0.9) translate3d(0, 7.20%, 2px);
 }
 .cardslider--direction-up .cardslider__card--index-3 {
-  transform: scale(0.85) translate3d(0, 12.91%, 1px);
+  transform: scale(0.85) translate3d(0, 10.70%, 1px);
 }
 .cardslider--direction-up .cardslider__card--out {
   transform: translate3d(0, -150%, 4px);
@@ -110,19 +111,19 @@
   animation: sortfront-up 0.67s;
 }
 .cardslider--direction-down .cardslider__card {
-  transform: scale(0.8) translate3d(0, -17.25%, 0);
+  transform: scale(0.8) translate3d(0, -14.50%, 0);
 }
 .cardslider--direction-down .cardslider__card--index-0 {
   transform: translate3d(0, 0, 4px);
 }
 .cardslider--direction-down .cardslider__card--index-1 {
-  transform: scale(0.95) translate3d(0, -4.31%, 3px);
+  transform: scale(0.95) translate3d(0, -3.50%, 3px);
 }
 .cardslider--direction-down .cardslider__card--index-2 {
-  transform: scale(0.9) translate3d(0, -8.61%, 2px);
+  transform: scale(0.9) translate3d(0, -7.20%, 2px);
 }
 .cardslider--direction-down .cardslider__card--index-3 {
-  transform: scale(0.85) translate3d(0, -12.91%, 1px);
+  transform: scale(0.85) translate3d(0, -10.70%, 1px);
 }
 .cardslider--direction-down .cardslider__card--out {
   transform: translate3d(0, 150%, 4px);
@@ -134,19 +135,19 @@
   animation: sortfront-down 0.67s;
 }
 .cardslider--direction-right .cardslider__card {
-  transform: scale(0.8) translate3d(-17.25%, 0, 0);
+  transform: scale(0.8) translate3d(-14.50%, 0, 0);
 }
 .cardslider--direction-right .cardslider__card--index-0 {
   transform: translate3d(0, 0, 4px);
 }
 .cardslider--direction-right .cardslider__card--index-1 {
-  transform: scale(0.95) translate3d(-4.31%, 0, 3px);
+  transform: scale(0.95) translate3d(-3.50%, 0, 3px);
 }
 .cardslider--direction-right .cardslider__card--index-2 {
-  transform: scale(0.9) translate3d(-8.61%, 0, 2px);
+  transform: scale(0.9) translate3d(-7.20%, 0, 2px);
 }
 .cardslider--direction-right .cardslider__card--index-3 {
-  transform: scale(0.85) translate3d(-12.91%, 0, 1px);
+  transform: scale(0.85) translate3d(-10.70%, 0, 1px);
 }
 .cardslider--direction-right .cardslider__card--out {
   transform: translate3d(150%, 0, 4px);
@@ -158,19 +159,19 @@
   animation: sortfront-right 0.67s;
 }
 .cardslider--direction-left .cardslider__card {
-  transform: scale(0.8) translate3d(17.25%, 0, 0);
+  transform: scale(0.8) translate3d(14.50%, 0, 0);
 }
 .cardslider--direction-left .cardslider__card--index-0 {
   transform: translate3d(0, 0, 4px);
 }
 .cardslider--direction-left .cardslider__card--index-1 {
-  transform: scale(0.95) translate3d(4.31%, 0, 3px);
+  transform: scale(0.95) translate3d(3.50%, 0, 3px);
 }
 .cardslider--direction-left .cardslider__card--index-2 {
-  transform: scale(0.9) translate3d(8.61%, 0, 2px);
+  transform: scale(0.9) translate3d(7.20%, 0, 2px);
 }
 .cardslider--direction-left .cardslider__card--index-3 {
-  transform: scale(0.85) translate3d(12.91%, 0, 1px);
+  transform: scale(0.85) translate3d(10.70%, 0, 1px);
 }
 .cardslider--direction-left .cardslider__card--out {
   transform: translate3d(150%, 0, 4px);

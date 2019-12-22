@@ -33,7 +33,7 @@ body {
 
 @media (max-width: 600px) {
 	.cardslider-cards {
-		width: 80%;
+		width: 90%;
 	}
 }
 
@@ -67,9 +67,17 @@ body {
 }
 
 /* modified from here */
+body p {
+    mix-blend-mode: normal;
+}
+
+div, button, p, img {
+    touch-action: manipulation;
+}
+
 .cardslider__cards {
     width: 95%;
-    height: 85%;
+    height: 95%;
 }
 
 .cardslider__card {
@@ -83,6 +91,7 @@ body {
     height: 100%;
     background: url("/resouces/image/main.jpg") no-repeat;
     background-size: auto 100%;
+    background-position: center top;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -94,6 +103,7 @@ body {
     font-size: 24px;
     line-height: 1.0;
     letter-spacing: 2.0px;
+    mix-blend-mode: normal;
 }
 
 .first-content hr {
@@ -109,6 +119,7 @@ body {
     text-align: center;
     font-size: 18px;
     letter-spacing: 1px;
+    mix-blend-mode: normal;
 }
 .first-content .stamp {
     width: 80px;
@@ -139,6 +150,7 @@ body {
     text-align: center;
     font-size: 16px;
     letter-spacing: 1.5px;
+    mix-blend-mode: normal;
 }
 
 .first-content .location {
@@ -148,6 +160,7 @@ body {
     text-align: center;
     font-size: 16px;
     letter-spacing: 1.5px;
+    mix-blend-mode: normal;
 }
 
 .first-content-detail {
@@ -188,7 +201,7 @@ body {
     font-size: 16px;
     letter-spacing: 1.2px;
     margin-top:  35px;
-    line-height: 1.6;
+    line-height: 2.0;
 }
 
 .second-content .parent-name {
@@ -205,6 +218,10 @@ body {
     font-size: 14px;
     letter-spacing: 2px;
     line-height: 2.0;   
+}
+
+.second-content-shuttle {
+    display: none;
 }
 
 /* 세번째 컨텐츠 */
@@ -232,7 +249,7 @@ body {
 }
 
 .third-content .controller-area {
-    padding-top: 10px;
+    /* padding-top: 10px; */
     text-align: center;
     height: 10%;
     text-align: center;
@@ -253,7 +270,7 @@ body {
     height: 100%;
     background: url("/resouces/image/map.jpg") no-repeat;
     background-size: 375px auto;
-    background-position: 50% 150px;
+    background-position: 50% 160px;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -282,7 +299,7 @@ body {
 .fourth-content .address {
     text-align: center;
     font-size: 14px;
-    margin-top: 330px;
+    margin-top: 340px;
 }
 
 .font-15 {
@@ -311,4 +328,57 @@ button {
 hr {
     width: 80%;
     border: 0.5px solid rgba(197, 152, 92, 0.3);
+}
+
+/* arrow */
+.arrow {
+    opacity: 0;
+    position: absolute;
+        left: calc(50% - 10px);
+        top: 25px;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 180);
+    z-index: 50;
+}
+
+.arrow-first {
+    animation: arrow-movement 2s ease-in-out infinite;
+}
+.arrow-second {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+}
+
+.arrow:before,
+.arrow:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 2px; 
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 20px;
+}
+
+.arrow:before {
+    transform: rotate(-30deg) translateX(-42%);
+    transform-origin: top left;
+}
+
+.arrow:after {
+    transform: rotate(30deg) translateX(42%);
+    transform-origin: top right;
+}
+
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+        top: 40px;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
 }

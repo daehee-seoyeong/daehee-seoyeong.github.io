@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:url"                content="https://daehee-seoyeong.github.io" />
     <meta property="og:type"               content="website" />
@@ -15,6 +15,11 @@
     <script src="/resouces/js/jquery.slider.min.js"></script>
 </head>
 <body>
+    <div id="div-loading" style="z-index: 9999; display: table; width: 100% !important; height: 100% !important;">
+        <p style="display: table-cell; vertical-align: middle; text-align: center; font-size: 18px;">잠시만 기다려주세요.</p>
+    </div>
+    <div class="arrow arrow-first"></div>
+    <div class="arrow arrow-second"></div>
     <div class="my-slider">
         <ul>
             <li>
@@ -32,7 +37,7 @@
             <li>
                 <div class="second-content">
                     <div class="second-content-detail">
-                        <p class="poem">
+                        <!-- <p class="poem">
                             봄의 그대는 벚꽃이었고
                             <br />여름의 그대는 바람이었으며
                             <br />가을의 그대는 하늘이었고
@@ -44,19 +49,22 @@
                         </p>
                         <p class="poem">
                             &lt;강현욱, 사계&gt;
-                        </p>
+                        </p> -->
                         <p class="letter">7년간의 추억을 가지고
                             <br />더 큰 행복의 길로 나아가려 합니다.
                         </p>
                         <p class="letter">그 시작의 자리에 오셔서 축복해주시면
                             <br/> 더없는 기쁨으로 간직하겠습니다.
                         </p>
-                        <div style="margin-top: 40px;">
+                        <div style="margin-top: 80px;">
                             <hr />
                                 <p class="parent-name">정상욱 김수경 <span class="child-name">의 장남</span> 대희<br />김형수 정경하 <span class="child-name">의 장녀</span> 서영
                                 </p>
                             <hr />
                         </div>
+                    </div>
+                    <div class="second-content-shuttle">
+
                     </div>
                 </div>
             </li>
@@ -79,62 +87,110 @@
                     <div class="fourth-content-detail">
                         <p class="title">오시는 길</p>
                         <p class="location">비렌티웨딩홀<br />비렌티빌 베르테홀(3F)</p>
-                        <p class="address">충남 천안시 서북구 천안대로 1198-30 (신당동)&nbsp;<img src="/resouces/image/copy.png"/></p>
-                        <div style="text-align: center; margin-top: 25px;">
-                            <button>셔틀안내</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button>카카오맵</button>
-                        </div>
+                        <p class="address" onclick="copyToClipboard('충남 천안시 서북구 천안대로 1198-30 (신당동)');">충남 천안시 서북구 천안대로 1198-30 (신당동)&nbsp;<img src="/resouces/image/copy.png"/></p>
+                    </div>
+                    <div style="position: absolute; width: 100%; bottom: 40px; text-align: center;">
+                        <button>셔틀안내</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button onclick="launchDaumMap();">카카오맵</button>
                     </div>
                 </div>
             </li>
             <li>Card 5</li>
-            <li>Card 6</li>
         </ul>
     </div>
     <script>
-        $('.my-slider').cardslider({
-        
-            // keyboard navigation
-            keys: {
-                next: 38,
-                prev: 40
-            },
-        
-            // 'up', 'down', 'right', 'left'
-            direction: 'up',
-        
-            // shows navigation
-            nav: false,
-        
-            // allows swipe event on touch devices
-            swipe: true,
-        
-            // shows bottom pagination dots
-            dots: false,
-        
-            // infinite loop
-            loop: false,
-        
-            // callbacks
-            beforeCardChange: null,
-            afterCardChange: null
-    
-        })
+        function initializeCardSlider() {
+            $('.my-slider').cardslider({
+                
+                // keyboard navigation
+                keys: {
+                    next: 38,
+                    prev: 40
+                },
+            
+                // 'up', 'down', 'right', 'left'
+                direction: 'up',
+            
+                // shows navigation
+                nav: false,
+            
+                // allows swipe event on touch devices
+                swipe: true,
+            
+                // shows bottom pagination dots
+                dots: false,
+            
+                // infinite loop
+                loop: false,
+            
+                // callbacks
+                beforeCardChange: null,
+                afterCardChange: null
 
-        var dday = new Date("Feburay 1, 2020 00:00:00").getTime();//디데이
-        var nowday = new Date();//현재
-        nowday = nowday.getTime();//밀리세컨드 단위변환
-        var distance = dday - nowday;//디데이에서 현재까지 뺀다.
-        var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
+            });
+        }
 
-        if (d > 0){
-            $("#stamp").text("D-"+d);
+        function initializeDateStamp() {
+            var dday = new Date("Feburay 1, 2020 00:00:00").getTime();//디데이
+            var nowday = new Date();//현재
+            nowday = nowday.getTime();//밀리세컨드 단위변환
+            var distance = dday - nowday;//디데이에서 현재까지 뺀다.
+            var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
+
+            if (d > 0){
+                $("#stamp").text("D-"+d);
+            }
+            else if (d == 0) {
+                $("#stamp").text("D day");
+            } else {
+                $("#stamp").text("D+"+d);
+            }
         }
-        else if (d == 0) {
-            $("#stamp").text("D day");
-        } else {
-            $("#stamp").text("D+"+d);
+
+        function preventDoubleTap() {
+            (function($) {
+                $.fn.nodoubletapzoom = function() {
+                    $(this).bind('touchstart', function preventZoom(e) {
+                        var t2 = e.timeStamp
+                        , t1 = $(this).data('lastTouch') || t2
+                        , dt = t2 - t1
+                        , fingers = e.originalEvent.touches.length;
+                        $(this).data('lastTouch', t2);
+                        if (!dt || dt > 500 || fingers > 1) return; // not double-tap
+
+                        e.preventDefault(); // double tap - prevent the zoom
+                        // also synthesize click events we just swallowed up
+                        $(this).trigger('click').trigger('click');
+                    });
+                };
+            })(jQuery);
         }
+
+        function launchDaumMap() {
+            try {
+                location.href = "daummaps://place?id=245466707";
+                console.log('hi');
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        function copyToClipboard(val) {
+            var t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+            alert("주소가 복사되었습니다");
+        }
+
+        $(document).ready(function() {
+            initializeCardSlider();
+            initializeDateStamp();
+            preventDoubleTap();
+            $("#div-loading").remove();
+        });
     </script>
 </body>
 </html>
