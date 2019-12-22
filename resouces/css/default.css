@@ -335,7 +335,7 @@ hr {
     opacity: 0;
     position: absolute;
         left: calc(50% - 10px);
-        top: 25px;
+        top: 10px;
     transform-origin: 50% 50%;
     transform: translate3d(-50%, -50%, 180);
     z-index: 50;
@@ -373,7 +373,7 @@ hr {
 @keyframes arrow-movement {
     0% { 
         opacity: 0;
-        top: 40px;
+        top: 25px;
     }
     70% {
         opacity: 1;
