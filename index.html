@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800&display=swap&subset=korean" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps&display=swap&subset=latin-ext" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -8,11 +10,11 @@
     <meta property="og:type"               content="website" />
     <meta property="og:title"              content="대희 ♥ 서영" />
     <meta property="og:description"        content="저희 결혼합니다" />
-    <meta property="og:image"              content="https://github.com/daehee-seoyeong/daehee-seoyeong.github.io/blob/master/resouces/image/main.jpg?raw=true" />
-    <link href="/resouces/css/jquery.slider.css?v=191223" rel="stylesheet">
-    <link href="/resouces/css/default.css?v=191223" rel="stylesheet">
-    <script src="/resouces/js/jquery-2.2.3.min.js"></script>
-    <script src="/resouces/js/jquery.slider.min.js"></script>
+    <meta property="og:image"              content="https://github.com/daehee-seoyeong/daehee-seoyeong.github.io/blob/master/resources/image/main.jpg?raw=true" />
+    <link href="/resources/css/jquery.slider.css?v=191223" rel="stylesheet">
+    <link href="/resources/css/default.css?v=191223" rel="stylesheet">
+    <script src="/resources/js/jquery-2.2.3.min.js"></script>
+    <script src="/resources/js/jquery.slider.min.js"></script>
 </head>
 <body>
     <div id="div-loading" style="z-index: 9999; display: table; width: 100% !important; height: 100% !important;">
@@ -75,11 +77,12 @@
 
                         </div>
                         <div class="controller-area">
-                            <div style="display: table-cell; vertical-align: middle;">
-                            <!-- <button style="display: table-cell; vertical-align: middle;">이전</button>
+                            <!-- <div style="display: table-cell; vertical-align: middle;"> -->
+                            <button onclick="prevImage();" class="btn-prev-img">이전</button>
                             <span class="indicator">1/5</span>
-                            <button style="display: table-cell; vertical-align: middle;">다음</button>
-                         -->
+                            <button onclick="nextImage();" class="btn-next-img">다음</button>
+
+                                <!-- <div class="image-thumb"></div>
                                 <div class="image-thumb"></div>
                                 <div class="image-thumb"></div>
                                 <div class="image-thumb"></div>
@@ -88,9 +91,8 @@
                                 <div class="image-thumb"></div>
                                 <div class="image-thumb"></div>
                                 <div class="image-thumb"></div>
-                                <div class="image-thumb"></div>
-                                <div class="image-thumb"></div>
-                            </div>
+                                <div class="image-thumb"></div> -->
+                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
@@ -100,7 +102,7 @@
                     <div class="fourth-content-detail">
                         <p class="title">오시는 길</p>
                         <p class="location">비렌티웨딩홀<br />비렌티빌 베르테홀(3F)</p>
-                        <p class="address" onclick="copyToClipboard('충남 천안시 서북구 천안대로 1198-30 (신당동)');">충남 천안시 서북구 천안대로 1198-30 (신당동)&nbsp;<img src="/resouces/image/copy.png"/></p>
+                        <p class="address" onclick="copyToClipboard('충남 천안시 서북구 천안대로 1198-30 (신당동)');">충남 천안시 서북구 천안대로 1198-30 (신당동)&nbsp;<img src="/resources/image/copy.png"/></p>
                     </div>
                     <div style="position: absolute; width: 100%; bottom: 40px; text-align: center;">
                         <button>셔틀안내</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -112,6 +114,14 @@
         </ul>
     </div>
     <script>
+        var images = [
+            "/resources/image/photo-01.jpg", 
+            "/resources/image/photo-02.jpg", 
+            "/resources/image/photo-03.jpg", 
+            "/resources/image/photo-04.jpg", 
+            "/resources/image/photo-05.jpg", 
+        ];
+
         function initializeCardSlider() {
             $('.my-slider').cardslider({
                 
@@ -196,6 +206,40 @@
             document.execCommand('copy');
             document.body.removeChild(t);
             alert("주소가 복사되었습니다");
+        }
+
+        function prevImage() {
+            
+        }
+
+        function nextImage() {
+            console.log('a');
+            var pageString = $(".indicator").text();
+            console.log('pageString: ' + pageString);
+            var curPage = parseInt(pageString.split("/")[0]);
+            var maxPage = parseInt(pageString.split("/")[1]);
+
+            console.log('curPage: ' + curPage);
+            console.log('maxPage: ' + maxPage);
+
+            var nextPage = (curPage + 1 > maxPage) ? 1 : curPage + 1;
+
+            console.log('nextPage: ' + nextPage);
+
+            var cssText = "url(\"" + images[nextPage-1] + "\") no-repeat";
+
+            console.log('cssText: ' + cssText);
+
+            $(".photo-area").css("background", cssText);
+            $(".photo-area").css("background-size", "100% auto");
+            $(".photo-area").css("background-position", "center");
+            $(".photo-area").css("transition", "opacity 1s ease-in-out");
+
+            $(".indicator").text(nextPage + "/" + maxPage);
+        }
+
+        function switchImage() {
+            
         }
 
         $(document).ready(function() {

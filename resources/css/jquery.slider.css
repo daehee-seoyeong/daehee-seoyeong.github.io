@@ -62,7 +62,7 @@
 .cardslider__card {
   background: #d7d7d7;
   /* background: url("http://api.thumbr.it/whitenoise-361x370.png?background=faf9f2ff&noise=626262&density=10&opacity=9"); */
-  background: url("/resouces/image/background.jpg") no-repeat;
+  background: url("/resources/image/background.jpg") no-repeat;
   background-size: 375px auto;
   display: block;
   border-radius: 10px;
