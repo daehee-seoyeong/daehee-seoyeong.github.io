@@ -75,9 +75,20 @@
 
                         </div>
                         <div class="controller-area">
-                            <button style="display: table-cell; vertical-align: middle;">이전</button>
+                            <!-- <button style="display: table-cell; vertical-align: middle;">이전</button>
                             <span class="indicator">1/5</span>
                             <button style="display: table-cell; vertical-align: middle;">다음</button>
+                         -->
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
+                            <div class="image-thumb"></div>
                         </div>
                     </div>
                 </div>
@@ -190,6 +201,19 @@
             initializeDateStamp();
             preventDoubleTap();
             $("#div-loading").remove();
+
+            $(".controller-area").on("touchstart", function(e) {
+                e.stopPropagation();
+            });
+            $(".controller-area").on("touchmove", function(e) {
+                e.stopPropagation();
+            });
+            $(".controller-area").on("keydown", function(e) {
+                e.stopPropagation();
+            });
+            $(".controller-area").on("message", function(e) {
+                e.stopPropagation();
+            });
         });
     </script>
 </body>
