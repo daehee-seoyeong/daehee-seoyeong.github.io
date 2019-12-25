@@ -256,6 +256,8 @@ div, button, p, img {
     overflow-x: scroll;
     white-space: nowrap;
     padding-left: 5px;
+    vertical-align: middle;
+    display: table;
 }
 
 .third-content .controller-area .indicator {
@@ -390,4 +392,5 @@ hr {
     height: 50px;
     background-color: black;
     display: inline-block;
+    margin-right: 1px;
 }
