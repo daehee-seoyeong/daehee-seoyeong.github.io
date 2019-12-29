@@ -29,6 +29,7 @@ body {
     background-color:#0e2f40;
     color: #6b4618 !important;
     text-rendering: optimizeLegibility;
+    margin: 0;
 }
 
 @media (max-width: 600px) {
@@ -514,4 +515,8 @@ hr {
 
 div, button, p, img, span {
     touch-action: manipulation !important;
+}
+
+#div-loading {
+    color: rgba(245, 222, 179, 0.808);
 }
