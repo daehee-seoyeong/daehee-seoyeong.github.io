@@ -71,10 +71,6 @@ body p {
     mix-blend-mode: normal;
 }
 
-div, button, p, img, span {
-    touch-action: manipulation !important;
-}
-
 .cardslider__cards {
     width: 95%;
     height: 95%;
@@ -513,4 +509,8 @@ hr {
     background-color: black;
     display: inline-block;
     margin-right: 1px;
+}
+
+div, button, p, img, span {
+    touch-action: manipulation !important;
 }

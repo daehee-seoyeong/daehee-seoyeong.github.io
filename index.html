@@ -178,18 +178,18 @@
     </div>
     <script>
         var images = [
-            "/resources/image/photo-01.jpg", 
-            "/resources/image/photo-02.jpg", 
-            "/resources/image/photo-03.jpg", 
-            "/resources/image/photo-04.jpg", 
-            "/resources/image/photo-05.jpg", 
-            "/resources/image/photo-06.jpg", 
-            "/resources/image/photo-07.jpg", 
-            "/resources/image/photo-08.jpg", 
-            "/resources/image/photo-09.jpg", 
-            "/resources/image/photo-10.jpg", 
-            "/resources/image/photo-11.jpg", 
-            "/resources/image/photo-12.jpg", 
+            { path: "/resources/image/photo-01.jpg", align: "top" }, 
+            { path: "/resources/image/photo-02.jpg", align: "center" }, 
+            { path: "/resources/image/photo-03.jpg", align: "top" }, 
+            { path: "/resources/image/photo-04.jpg", align: "top" }, 
+            { path: "/resources/image/photo-05.jpg", align: "top" }, 
+            { path: "/resources/image/photo-06.jpg", align: "top" }, 
+            { path: "/resources/image/photo-07.jpg", align: "top" }, 
+            { path: "/resources/image/photo-08.jpg", align: "top" }, 
+            { path: "/resources/image/photo-09.jpg", align: "top" }, 
+            { path: "/resources/image/photo-10.jpg", align: "top" }, 
+            { path: "/resources/image/photo-11.jpg", align: "top" }, 
+            { path: "/resources/image/photo-12.jpg", align: "top" }, 
         ];
 
         function openShuttle() {
@@ -296,9 +296,10 @@
 
             var prevPage = (curPage - 1 == 0) ? images.length : curPage - 1;
 
-            var cssText = "url(\"" + images[prevPage-1] + "\") no-repeat";
+            var imgPath = "url(\"" + images[prevPage-1].path + "\") no-repeat";
+            var cssText = images[nextPage-1].align;
 
-            switchImage(cssText, prevPage, maxPage);
+            switchImage(imgPath, cssText, prevPage, maxPage);
         }
 
         function nextImage() {
@@ -309,15 +310,16 @@
 
             var nextPage = (curPage + 1 > maxPage) ? 1 : curPage + 1;
 
-            var cssText = "url(\"" + images[nextPage-1] + "\") no-repeat";
+            var imgPath = "url(\"" + images[nextPage-1].path + "\") no-repeat";
+            var cssText = images[nextPage-1].align;
 
-            switchImage(cssText, nextPage, maxPage);
+            switchImage(imgPath, cssText, nextPage, maxPage);
         }
 
-        function switchImage(cssText, currentPage, maxPage) {
-            $(".photo-area").css("background", cssText);
+        function switchImage(imgPath, cssText, currentPage, maxPage) {
+            $(".photo-area").css("background", imgPath);
             $(".photo-area").css("background-size", "100% auto");
-            $(".photo-area").css("background-position", "center");
+            $(".photo-area").css("background-position", cssText);
             $(".photo-area").css("transition", "opacity 1s ease-in-out");
             $(".indicator").text(currentPage + "/" + maxPage);
         }
