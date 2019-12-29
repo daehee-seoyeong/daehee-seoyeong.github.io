@@ -129,7 +129,7 @@
                         </div>
                         <div class="controller-area">
                             <button onclick="prevImage();" class="btn-prev-img">이전</button>
-                            <span class="indicator">1/5</span>
+                            <span class="indicator">1/12</span>
                             <button onclick="nextImage();" class="btn-next-img">다음</button>
                         </div>
                     </div>
@@ -183,6 +183,13 @@
             "/resources/image/photo-03.jpg", 
             "/resources/image/photo-04.jpg", 
             "/resources/image/photo-05.jpg", 
+            "/resources/image/photo-06.jpg", 
+            "/resources/image/photo-07.jpg", 
+            "/resources/image/photo-08.jpg", 
+            "/resources/image/photo-09.jpg", 
+            "/resources/image/photo-10.jpg", 
+            "/resources/image/photo-11.jpg", 
+            "/resources/image/photo-12.jpg", 
         ];
 
         function openShuttle() {
@@ -320,19 +327,6 @@
             initializeDateStamp();
             preventDoubleTap();
             $("#div-loading").remove();
-
-            $(".controller-area").on("touchstart", function(e) {
-                e.stopPropagation();
-            });
-            $(".controller-area").on("touchmove", function(e) {
-                e.stopPropagation();
-            });
-            $(".controller-area").on("keydown", function(e) {
-                e.stopPropagation();
-            });
-            $(".controller-area").on("message", function(e) {
-                e.stopPropagation();
-            });
         });
     </script>
 </body>
