@@ -328,7 +328,17 @@
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
-            $("#div-loading").remove();
+            // $("#div-loading").remove();
+
+            $(".first-content").css("background", "url('/resources/image/main.jpg') no-repeat")
+                .promise()
+                .done(function() {
+                    $(".first-content").css("background-size", "auto 100%");
+                    $(".first-content").css("background-position", "center top");
+                    $("#div-loading").remove();
+                })
+            ;
+            
         });
     </script>
 </body>
