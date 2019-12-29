@@ -89,7 +89,7 @@ div, button, p, img, span {
 .first-content {
     width: 100%;
     height: 100%;
-    background: url("/resources/image/main.jpg") no-repeat;
+    background: url("/resources/image/main-low.jpg") no-repeat;
     background-size: auto 100%;
     background-position: center top;
     opacity: 0.9;
@@ -283,18 +283,65 @@ div, button, p, img, span {
 .fourth-content {
     width: 100%;
     height: 100%;
+    
+}
+
+.fourth-content-detail {
     background: url("/resources/image/map.jpg") no-repeat;
     background-size: 375px auto;
     background-position: 50% 160px;
     opacity: 0.9;
     mix-blend-mode: multiply;
-}
-
-.fourth-content-detail {
     padding-top: 20px;
     opacity: none;
     position: absolute;
     width: 100%;
+    height: 100%;
+}
+
+.fourth-content-shuttle {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.fourth-content-shuttle .letter-head {
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    margin: 0;
+    margin-top: 32px;
+    line-height: 2.5;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.fourth-content-shuttle .letter {
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    margin: 0;
+    margin-top: 8px;
+    line-height: 1.8;
+}
+
+.fourth-content-shuttle button {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(197, 152, 92, 0.3);
+    border: none;
+    color: #805522 !important;
+    border-radius: 50%;
+    font-size: 18px;
+    padding: 0;
+    line-height: 1;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .fourth-content .title {
@@ -315,6 +362,68 @@ div, button, p, img, span {
     text-align: center;
     font-size: 14px;
     margin-top: 340px;
+}
+
+/* 다섯번째 컨텐츠 */
+.fifth-content {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.fifth-content-detail {
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+}
+
+.fifth-content .title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom:  25px;
+}
+
+.fifth-content .date {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    margin: 0;
+    margin-top: 40px;
+    line-height: 2.5;
+    margin-bottom: 40px;
+}
+
+.fifth-content table {
+    margin-top: 30px;
+    width: 100%;
+    height: 200px;
+    padding: 0px 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.fifth-content table td {
+    vertical-align: top;
+    height: 50px;
+}
+
+.fifth-content table .day {
+    font-weight: normal;
+    font-size: 11px;
+}
+
+.fifth-content table .holiday {
+    color: rgb(155, 44, 11);
+}
+
+.fifth-content table .d-day {
+    background-color: #805522; 
+    color: whitesmoke; 
+    border-radius: 3px; 
+    padding: 0px 3px;
 }
 
 .font-15 {
