@@ -297,7 +297,7 @@
             var prevPage = (curPage - 1 == 0) ? images.length : curPage - 1;
 
             var imgPath = "url(\"" + images[prevPage-1].path + "\") no-repeat";
-            var cssText = images[nextPage-1].align;
+            var cssText = images[prevPage-1].align;
 
             switchImage(imgPath, cssText, prevPage, maxPage);
         }
