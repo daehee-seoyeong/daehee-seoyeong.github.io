@@ -634,5 +634,6 @@ div, button, p, img, span {
     vertical-align: middle; 
     text-align: center; 
     font-family: 'Nanum Myeongjo', serif !important; 
-    font-size: 18px;
+    font-weight: 400 !important;
+    font-size: 16px !important;
 }
