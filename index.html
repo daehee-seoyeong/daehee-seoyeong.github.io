@@ -342,15 +342,14 @@
         }
 
         function switchImage(beforePage, afterPage, maxPage) {
-            $(".photo-area-"+beforePage).css("background-size", "100% auto");
-            $(".photo-area-"+afterPage).css("background-size", "0 0");
+            $(".photo-area-"+beforePage).css("background-size", "0 0");
+            $(".photo-area-"+beforePage).css("height", "0");
+            $(".photo-area-"+afterPage).css("background-size", "100% auto");
+            $(".photo-area-"+afterPage).css("height", "calc(100% - 70px)");
             $(".indicator").text(afterPage + "/" + maxPage);
         }
 
         $(document).ready(function() {
-            $(".photo").each(function(index, value) {
-                if (index != 0) $(this).css("display", "none");
-            });
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
