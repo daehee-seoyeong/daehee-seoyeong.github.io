@@ -5,6 +5,7 @@
 
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 
 html, body {
@@ -245,7 +246,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-01.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -255,7 +256,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-02.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -265,7 +266,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-03.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -275,7 +276,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-04.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -295,7 +296,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-06.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -305,7 +306,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-07.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -315,7 +316,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-08.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -325,7 +326,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-09.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -335,7 +336,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-10.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -345,7 +346,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-11.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
@@ -355,7 +356,7 @@ body p {
     height: calc(100% - 70px);
     background: url("/resources/image/photo-12.jpg") no-repeat;
     background-size: 100% auto;
-    background-position: center;
+    background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
 }
