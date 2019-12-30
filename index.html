@@ -342,8 +342,8 @@
         }
 
         function switchImage(beforePage, afterPage, maxPage) {
-            $(".photo-area-"+afterPage).css("display", "block");
-            $(".photo-area-"+beforePage).css("display", "none");
+            $(".photo-area-"+beforePage).css("background-size", "100% auto");
+            $(".photo-area-"+afterPage).css("background-size", "0 0");
             $(".indicator").text(afterPage + "/" + maxPage);
         }
 

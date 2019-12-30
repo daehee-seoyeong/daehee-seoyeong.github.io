@@ -254,7 +254,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-02.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -263,7 +263,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-03.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -272,7 +272,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-04.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -281,7 +281,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-05.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -290,7 +290,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-06.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -299,7 +299,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-07.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -308,7 +308,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-08.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -317,7 +317,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-09.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -326,7 +326,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-10.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -335,7 +335,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-11.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
@@ -344,7 +344,7 @@ body p {
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-12.jpg") no-repeat;
-    background-size: 100% auto;
+    background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
     mix-blend-mode: multiply;
