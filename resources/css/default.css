@@ -622,5 +622,17 @@ div, button, p, img, span {
 }
 
 #div-loading {
-    color: rgba(245, 222, 179, 0.808);
+    color: rgba(209, 183, 134, 0.808);
+    z-index: 9999; 
+    display: table; 
+    width: 100% !important; 
+    height: 100% !important;
+}
+
+#div-loading p {
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center; 
+    font-family: 'Nanum Myeongjo', serif !important; 
+    font-size: 18px;
 }
