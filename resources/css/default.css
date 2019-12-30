@@ -633,7 +633,7 @@ div, button, p, img, span {
     display: table-cell; 
     vertical-align: middle; 
     text-align: center; 
-    font-family: 'Nanum Myeongjo', serif !important; 
+    font-family: serif !important; 
     font-weight: 400 !important;
     font-size: 16px !important;
 }
