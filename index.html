@@ -27,7 +27,9 @@
             <li>
                 <div class="first-content">
                     <div class="first-content-detail">
-                        <p class="title">정대희&nbsp;<span style="font-size: 16px;">♥</span>&nbsp;김서영</p>
+                        <p class="title">정대희
+                            <img src="/resources/image/heart-4.png" style="width: 15px; margin-left: 3px; margin-right: 3px;"/>
+                            김서영</p>
                         <hr />
                         <p class="subtitle">결혼합니다</p>
                         <p class="date">2020. 2. 1. 토요일 오후 1시</p>
@@ -124,7 +126,40 @@
             <li>
                 <div class="third-content">
                     <div class="third-content-detail">
-                        <div class="photo-area">
+                        <div class="photo photo-area-1">
+
+                        </div>
+                        <div class="photo-area-2">
+
+                        </div>
+                        <div class="photo-area-3">
+
+                        </div>
+                        <div class="photo-area-4">
+
+                        </div>
+                        <div class="photo-area-5">
+
+                        </div>
+                        <div class="photo-area-6">
+
+                        </div>
+                        <div class="photo-area-7">
+
+                        </div>
+                        <div class="photo-area-8">
+
+                        </div>
+                        <div class="photo-area-9">
+
+                        </div>
+                        <div class="photo-area-10">
+
+                        </div>
+                        <div class="photo-area-11">
+
+                        </div>
+                        <div class="photo-area-12">
 
                         </div>
                         <div class="controller-area">
@@ -290,38 +325,26 @@
 
         function prevImage() {
             var pageString = $(".indicator").text();
-
             var curPage = parseInt(pageString.split("/")[0]);
             var maxPage = parseInt(pageString.split("/")[1]);
-
             var prevPage = (curPage - 1 == 0) ? images.length : curPage - 1;
 
-            var imgPath = "url(\"" + images[prevPage-1].path + "\") no-repeat";
-            var cssText = images[prevPage-1].align;
-
-            switchImage(imgPath, cssText, prevPage, maxPage);
+            switchImage(curPage, prevPage, maxPage);
         }
 
         function nextImage() {
             var pageString = $(".indicator").text();
-
             var curPage = parseInt(pageString.split("/")[0]);
             var maxPage = parseInt(pageString.split("/")[1]);
-
             var nextPage = (curPage + 1 > maxPage) ? 1 : curPage + 1;
 
-            var imgPath = "url(\"" + images[nextPage-1].path + "\") no-repeat";
-            var cssText = images[nextPage-1].align;
-
-            switchImage(imgPath, cssText, nextPage, maxPage);
+            switchImage(curPage, nextPage, maxPage);
         }
 
-        function switchImage(imgPath, cssText, currentPage, maxPage) {
-            $(".photo-area").css("background", imgPath);
-            $(".photo-area").css("background-size", "100% auto");
-            $(".photo-area").css("background-position", cssText);
-            $(".photo-area").css("transition", "opacity 1s ease-in-out");
-            $(".indicator").text(currentPage + "/" + maxPage);
+        function switchImage(beforePage, afterPage, maxPage) {
+            $(".photo-area-"+beforePage).css("display", "none");
+            $(".photo-area-"+afterPage).css("display", "block");
+            $(".indicator").text(afterPage + "/" + maxPage);
         }
 
         $(document).ready(function() {

@@ -99,7 +99,7 @@ body p {
     text-align: center;
     font-size: 24px;
     line-height: 1.0;
-    letter-spacing: 2.0px;
+    letter-spacing: 2.5px;
     mix-blend-mode: normal;
 }
 
@@ -240,10 +240,120 @@ body p {
     height: 100%;
 }
 
-.third-content .photo-area {
+.third-content .photo-area-1{
     width: 100%;
     height: calc(100% - 70px);
     background: url("/resources/image/photo-01.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-2 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-02.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-3 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-03.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-4 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-04.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-5 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-05.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-6 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-06.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-7 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-07.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-8 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-08.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-9 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-09.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-10 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-10.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-11 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-11.jpg") no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+}
+.third-content .photo-area-12 {
+    display: none;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: url("/resources/image/photo-12.jpg") no-repeat;
     background-size: 100% auto;
     background-position: center;
     opacity: 0.9;
