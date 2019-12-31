@@ -615,7 +615,7 @@ div, button, p, img, span {
 #div-loading {
     color: rgba(209, 183, 134, 0.808);
     z-index: 9999; 
-    display: table; 
+    display: none; 
     width: 100% !important; 
     height: 100% !important;
     background-color: #0e2f40;

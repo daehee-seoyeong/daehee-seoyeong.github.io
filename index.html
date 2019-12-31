@@ -196,7 +196,7 @@
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
-            $(".arrow").fadeIn();
+            $(".arrow").css("display", "table");
         });
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
