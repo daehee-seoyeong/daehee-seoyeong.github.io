@@ -569,7 +569,7 @@ hr {
 .arrow:after {
     background: #fff;
     content: '';
-    display: none;
+    display: block;
     height: 2px; 
     position: absolute;
         top: 0;
