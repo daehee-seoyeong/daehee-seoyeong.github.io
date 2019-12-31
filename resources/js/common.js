@@ -33,7 +33,13 @@ function initializeCardSlider() {
     
         // callbacks
         beforeCardChange: null,
-        afterCardChange: null
+        afterCardChange: function(index) {
+            if (index === 4) {
+                $(".arrow").fadeOut();
+            } else {
+                $(".arrow").fadeIn();
+            }
+        }
     });
 }
 
