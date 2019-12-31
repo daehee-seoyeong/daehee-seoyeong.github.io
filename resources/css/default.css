@@ -633,11 +633,11 @@ div, button, p, img, span {
 
 .dot-flashing {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: rgb(255, 214, 138);
-  color: rgb(255, 214, 138);
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgb(255, 224, 167);
+  color: rgb(255, 224, 167);
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: .5s;
   left: 50%;
@@ -653,33 +653,33 @@ div, button, p, img, span {
 }
 
 .dot-flashing::before {
-  left: -15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: rgb(255, 214, 138);
-  color: rgb(255, 214, 138);
+  left: -12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgb(255, 224, 167);
+  color: rgb(255, 224, 167);
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 0s;
 }
 
 .dot-flashing::after {
-  left: 15px;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: rgb(255, 214, 138);
-  color: rgb(255, 214, 138);
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgb(255, 224, 167);
+  color: rgb(255, 224, 167);
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 1s;
 }
 
 @keyframes dotFlashing {
   0% {
-    background-color: rgb(255, 214, 138);
+    background-color: rgb(255, 224, 167);
   }
   50%,
   100% {
-    background-color: rgb(250, 238, 216);
+    background-color: rgb(255, 241, 214);
   }
 }
