@@ -194,9 +194,9 @@
             initializeDateStamp();
             preventDoubleTap();
         });
-        $(document).waitForImages(function() {
+        $("body").waitForImages(true).done(function() {
             $("#div-loading").fadeOut("slow");
-            $(".arrow").css("display", "block");
+                $(".arrow").css("display", "block");
         });
     </script>
 </body>
