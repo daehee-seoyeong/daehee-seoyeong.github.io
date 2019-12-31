@@ -200,8 +200,8 @@
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
                 $(this).hide();
+                $(".arrow").css("display", "block");
             });
-            $(".arrow").css("display", "block");
         });
     </script>
 </body>
