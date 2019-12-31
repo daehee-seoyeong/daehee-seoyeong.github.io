@@ -195,8 +195,7 @@
             preventDoubleTap();
         });
         $("body").waitForImages(true).done(function() {
-            $("#div-loading").animate({opacity: 0}, 1000);
-            // $("#div-loading").fadeOut("slow");
+            $("#div-loading").animate({opacity: 0}, 1000).hide();
             $(".arrow").css("display", "block");
         });
     </script>
