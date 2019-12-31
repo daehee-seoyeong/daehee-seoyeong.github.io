@@ -78,7 +78,7 @@ body p {
 .first-content {
     width: 100%;
     height: 100%;
-    background: url("/resources/image/main.jpg") no-repeat;
+    background: url("/resources/image/low/main.jpg") no-repeat;
     background-size: auto 100%;
     background-position: center top;
     opacity: 0.9;
@@ -235,7 +235,7 @@ body p {
 .third-content .photo-area-1{
     width: 100%;
     height: calc(100% - 70px);
-    background: url("/resources/image/photo-01.jpg") no-repeat;
+    background: url("/resources/image/low/photo-01.jpg") no-repeat;
     background-size: 100% auto;
     background-position: top center;
     opacity: 0.9;
@@ -244,7 +244,7 @@ body p {
 .third-content .photo-area-2 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-02.jpg") no-repeat;
+    background: url("/resources/image/low/photo-02.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -253,7 +253,7 @@ body p {
 .third-content .photo-area-3 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-03.jpg") no-repeat;
+    background: url("/resources/image/low/photo-03.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -262,7 +262,7 @@ body p {
 .third-content .photo-area-4 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-04.jpg") no-repeat;
+    background: url("/resources/image/low/photo-04.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -271,7 +271,7 @@ body p {
 .third-content .photo-area-5 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-05.jpg") no-repeat;
+    background: url("/resources/image/low/photo-05.jpg") no-repeat;
     background-size: 0 0;
     background-position: center;
     opacity: 0.9;
@@ -280,7 +280,7 @@ body p {
 .third-content .photo-area-6 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-06.jpg") no-repeat;
+    background: url("/resources/image/low/photo-06.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -289,7 +289,7 @@ body p {
 .third-content .photo-area-7 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-07.jpg") no-repeat;
+    background: url("/resources/image/low/photo-07.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -298,7 +298,7 @@ body p {
 .third-content .photo-area-8 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-08.jpg") no-repeat;
+    background: url("/resources/image/low/photo-08.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -307,7 +307,7 @@ body p {
 .third-content .photo-area-9 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-09.jpg") no-repeat;
+    background: url("/resources/image/low/photo-09.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -316,7 +316,7 @@ body p {
 .third-content .photo-area-10 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-10.jpg") no-repeat;
+    background: url("/resources/image/low/photo-10.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -325,7 +325,7 @@ body p {
 .third-content .photo-area-11 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-11.jpg") no-repeat;
+    background: url("/resources/image/low/photo-11.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
@@ -334,7 +334,7 @@ body p {
 .third-content .photo-area-12 {
     width: 100%;
     height: 0;
-    background: url("/resources/image/photo-12.jpg") no-repeat;
+    background: url("/resources/image/low/photo-12.jpg") no-repeat;
     background-size: 0 0;
     background-position: top center;
     opacity: 0.9;
