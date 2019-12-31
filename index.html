@@ -16,6 +16,7 @@
     <link href="/resources/css/default.css?v=191223" rel="stylesheet">
     <script src="/resources/js/jquery-2.2.3.min.js"></script>
     <script src="/resources/js/jquery.slider.min.js"></script>
+    <script src="/resources/js/jquery.waitforimages.min.js"></script>
 </head>
 <body>
     <div id="div-loading"><p>잠시만 기다려주세요</p></div>
@@ -192,10 +193,10 @@
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
-            setTimeout(function() {
-                $("#div-loading").fadeOut("slow");
-                $(".arrow").css("display", "block");
-            }, 2500);
+        });
+        $(document).waitForImages(function() {
+            $("#div-loading").fadeOut("slow");
+            $(".arrow").css("display", "block");
         });
     </script>
 </body>
