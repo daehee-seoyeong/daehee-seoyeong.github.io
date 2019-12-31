@@ -74,11 +74,12 @@ function preventDoubleTap() {
 }
 
 function launchDaumMap() {
-    try {
-        location.href = "daummaps://place?id=245466707";
-    } catch (e) {
-        console.log(e);
-    }
+    location.href = "daummaps://place?id=245466707";
+    setTimeout(function() {
+        if (location.href === "https://daehee-seoyeong.github.io") {
+            location.href = "https://m.map.kakao.com/actions/searchView?q=%EB%B9%84%EB%A0%8C%ED%8B%B0#!/245466707/map/place";
+        }
+    }, 1000);
 }
 
 function copyToClipboard(val) {
