@@ -267,6 +267,9 @@ body p {
     vertical-align: middle;
     opacity: 0.9;
     mix-blend-mode: multiply;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .third-content .photo-area-3 {
     display: none;
