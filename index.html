@@ -23,6 +23,8 @@
         <!-- <div class="dot-flashing"></div> -->
         <p>잠시만 기다려주세요</p>
     </div>
+    <div class="arrow arrow-first"></div>
+    <div class="arrow arrow-second"></div>
     <div class="my-slider">
         <ul>
             <li>
@@ -198,8 +200,6 @@
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
                 $(this).hide();
-                $("body").prepend("<div class='arrow arrow-first'></div>");
-                $("body").prepend("<div class='arrow arrow-second'></div>");
             });
         });
     </script>
