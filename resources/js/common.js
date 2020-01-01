@@ -102,7 +102,7 @@ function prevImage() {
     var pageString = $(".indicator").text();
     var curPage = parseInt(pageString.split("/")[0]);
     var maxPage = parseInt(pageString.split("/")[1]);
-    var prevPage = (curPage - 1 == 0) ? images.length : curPage - 1;
+    var prevPage = (curPage - 1 == 0) ? 12 : curPage - 1;
     switchImage(curPage, prevPage, maxPage);
 }
 
@@ -115,9 +115,7 @@ function nextImage() {
 }
 
 function switchImage(beforePage, afterPage, maxPage) {
-    $(".photo-area-"+beforePage).css("background-size", "0 0");
-    $(".photo-area-"+beforePage).css("height", "0");
-    $(".photo-area-"+afterPage).css("background-size", "100% auto");
-    $(".photo-area-"+afterPage).css("height", "calc(100% - 70px)");
+    $(".photo-area-"+beforePage).css("display", "none");
+    $(".photo-area-"+afterPage).css("display", "block");
     $(".indicator").text(afterPage + "/" + maxPage);
 }
