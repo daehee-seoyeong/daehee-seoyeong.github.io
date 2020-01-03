@@ -191,11 +191,14 @@
         </ul>
     </div>
     <script src="/resources/js/common.js"></script>
+    <script src="/resources/js/jquery.mousewheel.min.js"></script>
     <script>
+        var cardslider;
         $(document).ready(function() {
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
+            cardslider = $('.my-slider').data('cardslider');
         });
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
@@ -205,6 +208,13 @@
                     }, 500);
                 });
             });
+        });
+        $("body").on("mousewheel", function(e) {
+            if (e.originalEvent.wheelDelta >= 0) {
+                cardslider.nextCard();
+            } else if (e.originalEvent.wheelDelta < 0) {
+                cardslider.prevCard();
+            }
         });
     </script>
 </body>
