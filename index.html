@@ -14,9 +14,17 @@
     <meta property="og:image"              content="https://github.com/daehee-seoyeong/daehee-seoyeong.github.io/blob/master/resources/image/main.jpg?raw=true" />
     <link href="/resources/css/jquery.slider.css?v=191223" rel="stylesheet">
     <link href="/resources/css/default.css?v=191223" rel="stylesheet">
+
+    <!-- jQuery -->
     <script src="/resources/js/jquery-2.2.3.min.js"></script>
     <script src="/resources/js/jquery.slider.min.js"></script>
     <script src="/resources/js/jquery.waitforimages.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
 <body>
     <div id="div-loading">
@@ -142,9 +150,9 @@
                             <img class="photo photo-area-12" src="/resources/image/photo-12.jpg"/>
                         </div>
                         <div class="controller-area">
-                            <button onclick="prevImage();" class="btn-prev-img">이전</button>
+                            <button class="custom-button btn-prev-img" onclick="prevImage();">이전</button>
                             <span class="indicator">1/12</span>
-                            <button onclick="nextImage();" class="btn-next-img">다음</button>
+                            <button class="custom-button btn-next-img" onclick="nextImage();">다음</button>
                         </div>
                     </div>
                 </div>
@@ -156,8 +164,8 @@
                         <p class="location">비렌티웨딩홀<br />비렌티빌 베르테홀(3F)</p>
                         <p class="address" onclick="copyToClipboard('충남 천안시 서북구 천안대로 1198-30 (신당동)');">충남 천안시 서북구 천안대로 1198-30 (신당동)&nbsp;<img src="/resources/image/copy.png"/></p>
                         <div style="position: absolute; width: 100%; bottom: 40px; text-align: center;">
-                            <button onclick="openShuttle();">셔틀안내</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button onclick="launchDaumMap();">카카오맵</button>
+                            <button class="custom-button" onclick="openShuttle();">셔틀안내</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="custom-button" onclick="launchDaumMap();">카카오맵</button>
                         </div>
                     </div>
                     <div class="fourth-content-shuttle">
@@ -184,7 +192,24 @@
                             [두정역]<br>
                             첫 예식시간 1시간 전부터 30분 간격으로 셔틀 버스 이용 가능 (두정역↔비렌티웨딩홀)
                         </p>
-                        <button onclick="closeShuttle();">×</button>
+                        <button class="custom-button" onclick="closeShuttle();">×</button>
+                    </div>
+                </div>
+            </li>
+            <li class="sixth-content">
+                <div class="sixth-content-detail">
+                    <p class="title">축하메시지</p>
+                    <div class="sixth-content-reply">
+                        <div class="reply-list">
+                            <table>
+                                <tr><td class="reply-name">이름</td><td class="reply-contents">내용</td></tr>
+                            </table>
+                        </div>
+                        <div class="sixth-content-inputgroup">
+                            <input type="text" placeholder="축하인사를 남겨주세요.">
+                            <button class="custom-button">보내기</button>
+                            <p></p>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -196,12 +221,64 @@
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
+            $(".reply-list table").on("touchstart", function(event) {
+                event.stopPropagation();
+            });
+            $(".reply-list table").on("touchmove", function(event) {
+                event.stopPropagation();
+            });
+            initializeFirebase();
         });
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
                 $(this).hide();
             });
         });
+        
+        function initializeFirebase() {
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDife6sBB6zUnJ2Tkq9FBmyUd6PplkakgU",
+                authDomain: "wedding-invitation-d73db.firebaseapp.com",
+                databaseURL: "https://wedding-invitation-d73db.firebaseio.com",
+                projectId: "wedding-invitation-d73db",
+                storageBucket: "wedding-invitation-d73db.appspot.com",
+                messagingSenderId: "444343261278",
+                appId: "1:444343261278:web:9aad35bc6d2461bdb73ccf"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+            ui.start('.sixth-content-inputgroup', {
+                callbacks: {
+                    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                        console.log("signInSuccessWithAuthResult");
+                        console.dir(authResult);
+                        console.dir(redirectUrl);
+                        // const userUid       = authResult.uid;
+                        // const email         = authResult.email;
+                        // const displayName   = authResult.displayName;
+                        // const photoURL      = authResult.photoURL;
+                        // const lastLoginAt   = authResult.lastLoginAt;
+                        // const createdAt     = authResult.createdAt;
+                        $(".firebaseui-container").remove();
+                        $(".sixth-content-inputgroup input").css("display", "inline-block");
+                        $(".sixth-content-inputgroup button").css("display", "inline-block");
+                        $(".sixth-content-inputgroup p").css("display", "block");
+                        $(".sixth-content-inputgroup p").text("Logged in as " + authResult.user.displayName);
+                        return false;
+                    },
+
+                    uiShown: function() {
+                        console.log('ui shown');
+                    },
+                },
+                signInFlow: 'popup',
+                signInOptions: [
+                    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+                ],
+            });
+        }
     </script>
 </body>
 </html>
