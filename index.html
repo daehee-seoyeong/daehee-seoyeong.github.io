@@ -222,7 +222,7 @@
             var ua = window.navigator.userAgent;
             var index = ua.indexOf(" KAKAOTALK");
             if (index > -1) {
-                ua = ua.substring(0, index);
+                ua = ua.substring(0, index) + " Safari/604.1";
                 window.navigator.userAgent = ua;
             }
             $(".sixth-content-inputgroup p").text(ua);
