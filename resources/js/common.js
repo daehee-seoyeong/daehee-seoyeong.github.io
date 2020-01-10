@@ -175,7 +175,7 @@ function initializeFirebaseUi() {
                 // $(".firebaseui-idp-text-short").text("Google 로그인");
             },
         },
-        signInFlow: 'popup',
+        signInFlow: 'redirect',
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
         ],
