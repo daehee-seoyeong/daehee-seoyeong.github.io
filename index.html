@@ -219,10 +219,17 @@
     <script src="/resources/js/common.js"></script>
     <script>
         $(document).ready(function() {
-            $(".sixth-content-inputgroup p").text(window.navigator.userAgent);
+            var ua = window.navigator.userAgent;
+            var index = ua.indexOf(" KAKAOTALK");
+            if (index > -1) {
+                ua = ua.substring(0, index);
+                window.navigator.userAgent = ua;
+            }
+            $(".sixth-content-inputgroup p").text(ua);
             window.navigator.__defineGetter__('userAgent', function () {
-                return 'Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Mobile/9B206';
+                return ua;
             });
+            $(".sixth-content-inputgroup p").text(window.navigator.userAgent);
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
