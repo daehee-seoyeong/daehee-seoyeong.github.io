@@ -593,7 +593,7 @@ body p {
 }
 
 .sixth-content-inputgroup p {
-    display: none;
+    display: block;
     font-size: 10px;
     font-family: 'Nanum Myeongjo', serif;
 }
