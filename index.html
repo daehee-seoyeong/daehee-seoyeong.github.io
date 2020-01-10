@@ -219,6 +219,9 @@
     <script src="/resources/js/common.js"></script>
     <script>
         $(document).ready(function() {
+            window.navigator.__defineGetter__('userAgent', function () {
+                return 'Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Mobile/9B206';
+            });
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
