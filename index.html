@@ -228,6 +228,7 @@
             preventScrollOnReplyList();
             initializeFirebaseUi();
             initializeFirebaseDB();
+            $(".sixth-content-inputgroup p").text(window.navigator.userAgent);
         });
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
