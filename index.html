@@ -219,6 +219,7 @@
     <script src="/resources/js/common.js"></script>
     <script>
         $(document).ready(function() {
+            $(".sixth-content-inputgroup p").text(window.navigator.userAgent);
             window.navigator.__defineGetter__('userAgent', function () {
                 return 'Mozilla/5.0 (iPad; CPU OS 5_1_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Mobile/9B206';
             });
@@ -228,7 +229,6 @@
             preventScrollOnReplyList();
             initializeFirebaseUi();
             initializeFirebaseDB();
-            $(".sixth-content-inputgroup p").text(window.navigator.userAgent);
         });
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
