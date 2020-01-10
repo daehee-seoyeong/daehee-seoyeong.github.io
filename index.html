@@ -222,14 +222,8 @@
             var ua = window.navigator.userAgent;
             var index = ua.indexOf(" KAKAOTALK");
             if (index > -1) {
-                ua = ua.substring(0, index) + " Safari/604.1";
-                window.navigator.userAgent = ua;
             }
-            $(".sixth-content-inputgroup p").text(ua);
-            window.navigator.__defineGetter__('userAgent', function () {
-                return ua;
-            });
-            $(".sixth-content-inputgroup p").text(window.navigator.userAgent);
+            $(".sixth-content-inputgroup p").text("구글 로그인은 외부 브라우저에서만 가능합니다 (크롬, 사파리 등)");
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
