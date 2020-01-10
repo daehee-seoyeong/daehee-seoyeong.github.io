@@ -170,9 +170,14 @@ function initializeFirebaseUi() {
             },
 
             uiShown: function() {
-                console.log('ui shown');
                 $(".firebaseui-idp-text-long").text("로그인 후 메시지 남기기");
                 // $(".firebaseui-idp-text-short").text("Google 로그인");
+                var ua = window.navigator.userAgent;
+                var index = ua.indexOf(" KAKAOTALK");
+                if (index > -1) {
+                    $(".sixth-content-inputgroup p").text("구글 로그인은 외부 브라우저에서만 가능합니다 (크롬, 사파리 등)");
+                    $(".mdl-button").css("display", "none");
+                }
             },
         },
         signInFlow: 'redirect',
