@@ -180,7 +180,7 @@ function initializeFirebaseUi() {
                 }
             },
         },
-        signInFlow: 'redirect',
+        signInFlow: 'popup',
         signInOptions: [
             firebase.auth.GoogleAuthProvider.PROVIDER_ID
         ],
