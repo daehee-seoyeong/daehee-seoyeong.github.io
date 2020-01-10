@@ -13,6 +13,7 @@
     <meta property="og:description"        content="저희 결혼합니다" />
     <meta property="og:image"              content="https://github.com/daehee-seoyeong/daehee-seoyeong.github.io/blob/master/resources/image/main.jpg?raw=true" />
     <link href="/resources/css/jquery.slider.css?v=191223" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <link href="/resources/css/default.css?v=191223" rel="stylesheet">
 
     <!-- jQuery -->
@@ -24,7 +25,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 </head>
 <body>
     <div id="div-loading">
@@ -202,12 +203,18 @@
                     <div class="sixth-content-reply">
                         <div class="reply-list">
                             <table>
-                                <tr><td class="reply-name">이름</td><td class="reply-contents">내용</td></tr>
+                                <!-- <tr><td class="reply-name">이름</td><td class="reply-contents">내용</td></tr> -->
+                                <tr>
+                                    <td>
+                                        <p class="reply-name">이름</p>
+                                        <p class="reply-contents">내용</p>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                         <div class="sixth-content-inputgroup">
                             <input type="text" placeholder="축하인사를 남겨주세요.">
-                            <button class="custom-button">보내기</button>
+                            <button class="custom-button" onclick="writeReply();">보내기</button>
                             <p></p>
                         </div>
                     </div>
@@ -221,64 +228,15 @@
             initializeCardSlider();
             initializeDateStamp();
             preventDoubleTap();
-            $(".reply-list table").on("touchstart", function(event) {
-                event.stopPropagation();
-            });
-            $(".reply-list table").on("touchmove", function(event) {
-                event.stopPropagation();
-            });
-            initializeFirebase();
+            preventScrollOnReplyList();
+            initializeFirebaseUi();
+            initializeFirebaseDB();
         });
         $("body").waitForImages(true).done(function() {
             $("#div-loading").animate({opacity: 0}, 1000, function() {
                 $(this).hide();
             });
         });
-        
-        function initializeFirebase() {
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyDife6sBB6zUnJ2Tkq9FBmyUd6PplkakgU",
-                authDomain: "wedding-invitation-d73db.firebaseapp.com",
-                databaseURL: "https://wedding-invitation-d73db.firebaseio.com",
-                projectId: "wedding-invitation-d73db",
-                storageBucket: "wedding-invitation-d73db.appspot.com",
-                messagingSenderId: "444343261278",
-                appId: "1:444343261278:web:9aad35bc6d2461bdb73ccf"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());
-            ui.start('.sixth-content-inputgroup', {
-                callbacks: {
-                    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                        console.log("signInSuccessWithAuthResult");
-                        console.dir(authResult);
-                        console.dir(redirectUrl);
-                        // const userUid       = authResult.uid;
-                        // const email         = authResult.email;
-                        // const displayName   = authResult.displayName;
-                        // const photoURL      = authResult.photoURL;
-                        // const lastLoginAt   = authResult.lastLoginAt;
-                        // const createdAt     = authResult.createdAt;
-                        $(".firebaseui-container").remove();
-                        $(".sixth-content-inputgroup input").css("display", "inline-block");
-                        $(".sixth-content-inputgroup button").css("display", "inline-block");
-                        $(".sixth-content-inputgroup p").css("display", "block");
-                        $(".sixth-content-inputgroup p").text("Logged in as " + authResult.user.displayName);
-                        return false;
-                    },
-
-                    uiShown: function() {
-                        console.log('ui shown');
-                    },
-                },
-                signInFlow: 'popup',
-                signInOptions: [
-                    firebase.auth.GoogleAuthProvider.PROVIDER_ID
-                ],
-            });
-        }
     </script>
 </body>
 </html>

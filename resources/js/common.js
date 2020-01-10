@@ -119,3 +119,116 @@ function switchImage(beforePage, afterPage, maxPage) {
     $(".photo-area-"+afterPage).css("display", "block");
     $(".indicator").text(afterPage + "/" + maxPage);
 }
+
+function preventScrollOnReplyList() {
+    $(".reply-list table").on("touchstart", function(event) {
+        event.stopPropagation();
+    });
+    $(".reply-list table").on("touchmove", function(event) {
+        event.stopPropagation();
+    });
+}
+
+function enableReplyFeature() {
+    $(".firebaseui-container").remove();
+    $(".sixth-content-inputgroup input").css("display", "inline-block");
+    $(".sixth-content-inputgroup button").css("display", "inline-block");
+    $(".sixth-content-inputgroup p").css("display", "block");
+    $(".sixth-content-inputgroup p").text("Logged in as " + authResult.user.displayName);
+}
+
+function initializeFirebaseUi() {
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDife6sBB6zUnJ2Tkq9FBmyUd6PplkakgU",
+        authDomain: "wedding-invitation-d73db.firebaseapp.com",
+        databaseURL: "https://wedding-invitation-d73db.firebaseio.com",
+        projectId: "wedding-invitation-d73db",
+        storageBucket: "wedding-invitation-d73db.appspot.com",
+        messagingSenderId: "444343261278",
+        appId: "1:444343261278:web:9aad35bc6d2461bdb73ccf"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('.sixth-content-inputgroup', {
+        callbacks: {
+            signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                console.log("signInSuccessWithAuthResult");
+                console.dir(authResult);
+                console.dir(redirectUrl);
+                // const userUid       = authResult.uid;
+                // const email         = authResult.email;
+                // const displayName   = authResult.displayName;
+                // const photoURL      = authResult.photoURL;
+                // const lastLoginAt   = authResult.lastLoginAt;
+                // const createdAt     = authResult.createdAt;
+                window.authResult = authResult;
+                enableReplyFeature();
+                return false;
+            },
+
+            uiShown: function() {
+                console.log('ui shown');
+                $(".firebaseui-idp-text-long").text("로그인 후 메시지 남기기");
+                // $(".firebaseui-idp-text-short").text("Google 로그인");
+            },
+        },
+        signInFlow: 'popup',
+        signInOptions: [
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID
+        ],
+    });
+}
+
+function initializeFirebaseDB() {
+    var repliesRef = firebase.database()
+        .ref('replies')
+        .once('value')
+        .then(function(snapshot) {
+            var html = [], h = -1;
+            var replies = snapshot.val();
+            snapshot.forEach(function(child) {
+                var reply = child.val();
+
+                html[++h] = '<tr><td><p class="reply-name">';
+                html[++h] = reply.displayName;
+                html[++h] = '</p><p class="reply-contents">';
+                html[++h] = reply.contents;
+                html[++h] = '</p></td></tr>';
+
+                // html[++h] = '<tr><td class="reply-name">';
+                // html[++h] = reply.displayName;
+                // html[++h] = '</td><td class="reply-contents">';
+                // html[++h] = reply.contents;
+                // html[++h] = '</td></tr>';
+            });
+            $(".reply-list table tbody")[0].innerHTML = html.join('');
+    });
+}
+
+function writeReply() {
+    var contents = convertMsg($(".sixth-content-inputgroup input").val());
+    if (contents == undefined || contents == '') {
+        alert("내용을 입력해주세요");
+        return;
+    }
+
+    var message = {
+        displayName: authResult.user.displayName,
+        contents: contents,
+        createdAt: new Date().getTime()
+    }
+    firebase.database().ref('replies').push(message)
+    .then(function() {
+        initializeFirebaseDB();
+        $(".sixth-content-inputgroup input").val('');
+    });
+}
+
+function convertMsg (html) { 
+    var tmp = document.createElement("DIV");
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || "";
+}

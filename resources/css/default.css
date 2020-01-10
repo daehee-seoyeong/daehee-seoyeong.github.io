@@ -572,12 +572,13 @@ body p {
     width: 85%;
     height: 100%;
     margin: 0 auto;
+    padding-top: 15px;
 }
 
 .sixth-content-inputgroup input {
     display: none;
     margin-top: 10px;
-    width: calc(100% - 120px);
+    width: calc(100% - 140px);
     margin-right: 10px;
     background-color: transparent;
     border: none;
@@ -603,8 +604,9 @@ body p {
 
 .sixth-content-reply table {
     width: 80%;
-    height: 100%;    
+    height: 0px;
     margin: 0 auto;
+    border-spacing: 0 2em;
 }
 
 .sixth-content-reply table tbody {
@@ -612,8 +614,9 @@ body p {
 }
 
 .sixth-content-reply table tr {
+    width: 100%;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .sixth-content-inputgroup {
@@ -621,18 +624,23 @@ body p {
 }
 
 .sixth-content-reply .reply-name {
-    width: 30%;
-    text-align: center;
+    /* width: 30%; */
+    text-align: left;
     padding: 5px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 10px;
+    font-weight: 800;
+    font-family: "Nanum Myeongjo" serif;
+    margin: 0px;
 }
 
 .sixth-content-reply .reply-contents {
-    width: 70%;
+    /* width: 70%; */
     text-align: left;
     padding: 5px;
-    font-size: 14px;
+    font-size: 15px;
+    font-family: "Nanum Myeongjo" serif;
+    vertical-align: middle;
+    margin: 0px;
 }
 
 .font-15 {
@@ -799,4 +807,8 @@ div, button, p, img, span {
   100% {
     background-color: rgb(255, 241, 214);
   }
+}
+
+.mdl-button {
+    border-radius: 40px;
 }
