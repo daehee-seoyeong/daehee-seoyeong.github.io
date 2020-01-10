@@ -193,21 +193,19 @@ function initializeFirebaseDB() {
         .once('value')
         .then(function(snapshot) {
             var html = [], h = -1;
-            var replies = snapshot.val();
+            var replies = [];
             snapshot.forEach(function(child) {
                 var reply = child.val();
+                replies.push(reply);
+            });
 
+            replies.reverse();
+            replies.forEach(function(reply) {
                 html[++h] = '<tr><td><p class="reply-name">';
                 html[++h] = reply.displayName;
                 html[++h] = '</p><p class="reply-contents">';
                 html[++h] = reply.contents;
                 html[++h] = '</p></td></tr>';
-
-                // html[++h] = '<tr><td class="reply-name">';
-                // html[++h] = reply.displayName;
-                // html[++h] = '</td><td class="reply-contents">';
-                // html[++h] = reply.contents;
-                // html[++h] = '</td></tr>';
             });
             $(".reply-list table tbody")[0].innerHTML = html.join('');
     });
