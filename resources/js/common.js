@@ -230,6 +230,17 @@ function writeReply() {
     });
 }
 
+function enableMouseScroll() {
+    var cardslider = $('.my-slider').data('cardslider');
+    $("body").on("mousewheel", function(e) {
+        if (e.originalEvent.wheelDelta >= 0) {
+            cardslider.nextCard();
+        } else if (e.originalEvent.wheelDelta < 0) {
+            cardslider.prevCard();
+        }
+    });
+}
+
 function convertMsg (html) { 
     var tmp = document.createElement("DIV");
     tmp.innerHTML = html;
