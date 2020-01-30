@@ -46,9 +46,12 @@ function initializeCardSlider() {
 function initializeDateStamp() {
     var dday = new Date("Feburay 1, 2020 00:00:00").getTime();//디데이
     var nowday = new Date();//현재
+    nowday.setHours(0);
+    nowday.setMinutes(0);
+    nowday.setSeconds(0);
     nowday = nowday.getTime();//밀리세컨드 단위변환
     var distance = dday - nowday;//디데이에서 현재까지 뺀다.
-    var d = Math.floor(distance / (1000 * 60 * 60 * 24));//일
+    var d = Math.ceil(distance / (1000 * 60 * 60 * 24));//일
 
     if (d > 0){
         $("#stamp").text("D-"+d);
@@ -56,7 +59,7 @@ function initializeDateStamp() {
     else if (d == 0) {
         $("#stamp").text("D day");
     } else {
-        $("#stamp").text("D+"+d);
+        $("#stamp").text("D+"+(-1*d));
     }
 }
 
